@@ -34,6 +34,7 @@
 |------|----|-------|
 |group_name|string|null: false, unique: true|
 
+
 ### Association
 - has_many :messages
 - has_many :users_groups
@@ -50,3 +51,4 @@
 ### Association
 - belongs_to :group
 - belongs_to :user
+
