@@ -6,21 +6,29 @@
       .icons
         = link_to edit_user_path(current_user), class: "icons-btn" do
           = icon('fa','cog')
-        = link_to "#", class: "icons-btn setting" do
+        = link_to new_group_path, class: "icons-btn setting" do
           = icon('far', 'edit')
 
   .group-list
-    %p.group-name
-      techcamp
-    %p.message
-      まだメッセージがありません
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          %p.group-name
+            = group.name
+          %p.message
+            メッセージはまだありません。
 
-    %p.group-name
-      techcamp
-    %p.message
-      まだメッセージがありません
+    -# %p.group-name
+    -#   techcamp
+    -# %p.message
+    -#   まだメッセージがありません
 
-    %p.group-name
-      techcamp
-    %p.message
-      まだメッセージがありません
+    -# %p.group-name
+    -#   techcamp
+    -# %p.message
+    -#   まだメッセージがありません
+
+    -# %p.group-name
+    -#   techcamp
+    -# %p.message
+    -#   まだメッセージがありません
