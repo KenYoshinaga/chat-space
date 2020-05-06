@@ -55,16 +55,17 @@ $side-font-color: #ffffff;
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     padding: 20px 20px 0;
-    color: $side-font-color;
     font-weight: bold;
     .group
       p.group-name{
        font-size: 15px;
        margin-bottom: 5px;
+       color: $side-font-color
       }
       p.message{
         font-size: 11px;
         margin-bottom: 40px;
+        color: $side-font-color
       }
   }
 }
@@ -109,24 +110,36 @@ $side-font-color: #ffffff;
         }
     }
 
-  .message-list{
+  .messages{
     background-color: #fafafa;
     height: calc(100vh - 190px);
+    font-size: 14px;
     padding: 35px 0 0 40px;
-
-    .name{
-      color: #333333;
-      font-size: 16px;
-      margin-bottom: 12px;
-      .class_DateTime{
-        color: #999999;
-        font-size: 12px;
-      }
-    }
-
+    overflow: scroll;
     .message{
-      color: #434A54;
-      margin-bottom: 46px;
+      padding-bottom: 40px;
+      .upper-message{
+        color: #434A54;
+        // margin-bottom: 46px;
+        display: flex;
+        &__user-name{
+          color: #333333;
+          font-size: 16px;
+          margin: 0 10px 12px 0;
+          font-weight: bold;
+        }
+        &__date{
+          color: #999999;
+          font-size: 12px;
+        }
+      }
+
+      .lower-message{
+        &__image{
+          width: 200px;
+          height: 200px;
+        }
+      }
     }
   }
 
@@ -138,7 +151,7 @@ $side-font-color: #ffffff;
     bottom: 0;
     @include between;
 
-    form.new_message{
+    .new_message{
        height: 50px;
        width: 100%;
        @include between;
@@ -151,7 +164,8 @@ $side-font-color: #ffffff;
 
         &__text{
           height: 50px;
-          padding-left: 10px;
+          width: 100%;
+          padding:0 40px 0 10px;
           border: none;
         }
 
